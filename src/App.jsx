@@ -11,7 +11,7 @@ import { Suspense } from 'react'
 
 function App() {
 
-  const fetchProducts = fetch('../public/product.json').then(res => res.json());
+  const fetchProducts = fetch('/product.json').then(res => res.json());
 
   return (
     <>
