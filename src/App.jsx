@@ -6,8 +6,12 @@ import Rating from './assets/Component/Rating/Rating'
 import GetStarted from './assets/Component/GetStarted/GetStarted'
 import TransparentPricing from './assets/Component/TransparentPricing/TransparentPricing'
 import Footer from './assets/Component/Footer/Footer'
+import ProductsContainer from './assets/Component/ProductsContainer/ProductsContainer'
+import { Suspense } from 'react'
 
 function App() {
+
+  const fetchProducts = fetch('../public/product.json').then(res => res.json());
 
   return (
     <>
@@ -17,7 +21,9 @@ function App() {
       </header>
       <main>
         <Rating></Rating>
-
+        <Suspense fallback={<span className="loading loading-infinity loading-xl"></span>}>
+          <ProductsContainer fetchProducts={fetchProducts}></ProductsContainer>
+        </Suspense>
         <GetStarted></GetStarted>
         <TransparentPricing></TransparentPricing>
       </main>

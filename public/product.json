@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "name": "Starter Resume Kit",
+        "description": "Perfect for beginners to create clean and professional resumes.",
+        "price": 9.99,
+        "period": "one-time",
+        "tag": "New",
+        "tagType": "new",
+        "features": [
+            "10+ templates",
+            "Basic customization",
+            "Export to PDF"
+        ],
+        "icon": "file-text",
+        "imgSrc": "https://i.ibb.co.com/j9jsj5xf/writing-2327400-1.png"
+    },
+    {
+        "id": 2,
+        "name": "Pro Resume Builder",
+        "description": "Advanced resume builder with modern templates and smart suggestions.",
+        "price": 19.99,
+        "period": "one-time",
+        "tag": "Popular",
+        "tagType": "popular",
+        "features": [
+            "50+ templates",
+            "ATS optimization",
+            "Export to PDF"
+        ],
+        "icon": "award",
+        "imgSrc": "https://i.ibb.co.com/FkgFP7WZ/design-tool.png"
+    },
+    {
+        "id": 3,
+        "name": "Career Boost Plan",
+        "description": "Monthly subscription with resume, cover letter, and job tracking tools.",
+        "price": 7.99,
+        "period": "monthly",
+        "tag": "Best Seller",
+        "tagType": "best seller",
+        "features": [
+            "Resume builder",
+            "Cover letter generator",
+            "Job tracker"
+        ],
+        "icon": "trending-up",
+        "imgSrc": "https://i.ibb.co.com/sdXtPSTC/portfolio.png"
+    },
+    {
+        "id": 4,
+        "name": "Ultimate Job Pack",
+        "description": "Complete toolkit for job seekers including templates and analytics.",
+        "price": 49.99,
+        "period": "one-time",
+        "tag": "Popular",
+        "tagType": "popular",
+        "features": [
+            "100+ templates",
+            "Analytics dashboard",
+            "Priority support"
+        ],
+        "icon": "briefcase",
+        "imgSrc": "https://i.ibb.co.com/hRn6VJkh/social-media.png"
+    },
+    {
+        "id": 5,
+        "name": "LinkedIn Optimizer",
+        "description": "Optimize your LinkedIn profile to attract recruiters.",
+        "price": 5.99,
+        "period": "monthly",
+        "tag": "New",
+        "tagType": "new",
+        "features": [
+            "Profile review",
+            "Keyword optimization",
+            "Headline generator"
+        ],
+        "icon": "linkedin",
+        "imgSrc": "https://i.ibb.co.com/j9jsj5xf/writing-2327400-1.png"
+    },
+    {
+        "id": 6,
+        "name": "Interview Prep Pro",
+        "description": "Get ready for interviews with AI-powered mock sessions.",
+        "price": 12.99,
+        "period": "monthly",
+        "tag": "Best Seller",
+        "tagType": "best seller",
+        "features": [
+            "Mock interviews",
+            "AI feedback",
+            "Question bank"
+        ],
+        "icon": "message-circle",
+        "imgSrc": "https://i.ibb.co.com/hRn6VJkh/social-media.png"
+    },
+    {
+        "id": 7,
+        "name": "Freelancer Portfolio Kit",
+        "description": "Build a stunning portfolio to showcase your freelance work.",
+        "price": 15.00,
+        "period": "one-time",
+        "tag": "Popular",
+        "tagType": "popular",
+        "features": [
+            "Portfolio templates",
+            "Custom domains",
+            "SEO tools"
+        ],
+        "icon": "layout",
+        "imgSrc": "https://i.ibb.co.com/sdXtPSTC/portfolio.png"
+    },
+    {
+        "id": 8,
+        "name": "Annual Career Suite",
+        "description": "Full access to all tools and features for a year.",
+        "price": 79.99,
+        "period": "yearly",
+        "tag": "Best Seller",
+        "tagType": "best seller",
+        "features": [
+            "All features included",
+            "Unlimited downloads",
+            "Premium support"
+        ],
+        "icon": "star",
+        "imgSrc": "https://i.ibb.co.com/FkgFP7WZ/design-tool.png"
+    },
+    {
+        "id": 9,
+        "name": "Student Resume Pack",
+        "description": "Designed for students and fresh graduates entering the job market.",
+        "price": 4.99,
+        "period": "one-time",
+        "tag": "New",
+        "tagType": "new",
+        "features": [
+            "Entry-level templates",
+            "Guided writing tips",
+            "PDF export"
+        ],
+        "icon": "book",
+        "imgSrc": "https://i.ibb.co.com/j9jsj5xf/writing-2327400-1.png"
+    }
+]
