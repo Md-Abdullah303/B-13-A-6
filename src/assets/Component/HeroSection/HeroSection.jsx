@@ -4,7 +4,7 @@ import playImg from '../../products/Play.png'
 
 const HeroSection = () => {
     return (
-        <div className='grid grid-cols-1 gap-5 sm:pt-40 md:pt-0 md:grid-cols-2  items-center w-[90%] sm:w-[85%] mx-auto h-screen'>
+        <div className='flex items-center gap-5 w-[90%] sm:w-[85%] mx-auto h-screen'>
             {/* left side */}
             <div className=" flex flex-col items-start sm:space-y-3 space-y-2 ">
                 {/* left side badge */}
