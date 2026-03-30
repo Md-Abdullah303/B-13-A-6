@@ -1,13 +1,17 @@
 import { BiFlag } from 'react-icons/bi'
 import './App.css'
+import Navber from './assets/Component/Navber/Navber'
+import HeroSection from './assets/Component/HeroSection/HeroSection'
 
 function App() {
 
   return (
     <>
-      <h1 className='btn btn-success text-red-500 text-3xl'>hi <BiFlag></BiFlag></h1>
-      <button className='btn btn-error' >hi</button>
-      
+      <header>
+        <Navber></Navber>
+        <HeroSection></HeroSection>
+      </header>
+
     </>
   )
 }
