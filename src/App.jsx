@@ -9,10 +9,11 @@ import Footer from './assets/Component/Footer/Footer'
 import ProductsContainer from './assets/Component/ProductsContainer/ProductsContainer'
 import { Suspense, useState } from 'react'
 import Loding from './assets/UI/Loding/Loding'
+import TransformSection from './assets/Component/TransformSection/TransformSection'
 
 function App() {
   const [AddToCartLenght, setAddToCartLenght] = useState(0);
-  const fetchProducts = fetch('/product.json').then(res => res.json());
+
 
   return (
     <>
@@ -22,15 +23,13 @@ function App() {
       </header>
       <main>
         <Rating></Rating>
-        <Suspense fallback={<Loding></Loding>}>
-          <ProductsContainer 
+        <ProductsContainer
           AddToCartLenght={AddToCartLenght}
           setAddToCartLenght={setAddToCartLenght}
-          fetchProducts={fetchProducts}
-          ></ProductsContainer>
-        </Suspense>
+        ></ProductsContainer>
         <GetStarted></GetStarted>
         <TransparentPricing></TransparentPricing>
+        <TransformSection></TransformSection>
       </main>
       <Footer></Footer>
     </>

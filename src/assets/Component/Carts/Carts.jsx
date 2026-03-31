@@ -11,10 +11,11 @@ const Carts = ({ AddToCart, setAddToCart, AddToCartLenght, setAddToCartLenght })
         const filterProduct = AddToCart.filter(item => item.id !== deletedProduct.id);
         setAddToCart(filterProduct)
         setAddToCartLenght(filterProduct.length);
-        // setAddToCartLenght(AddToCartLenght - 1);
+        
     }
     const handleAllCartDlt = () => {
         setAddToCart([]);
+        setAddToCartLenght(0);
     }
     return (
         <div className='border border-gray-200 p-5 rounded-xl space-y-2.5'>

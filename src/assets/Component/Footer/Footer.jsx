@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagramSquare } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className='bg-[#101727] mt-10 md:mt-20 text-[#FFFFFF]'>
+        <footer className='bg-[#101727] text-[#FFFFFF]'>
             <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-5 w-[85%] mx-auto py-10 md:py-15">
                 <div className="space-y-2">
                     <h1 className='text-2xl font-bold'>DigiTools</h1>

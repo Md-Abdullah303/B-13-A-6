@@ -1,16 +1,19 @@
-import React, { use, useState } from 'react';
+import React, { Suspense, use, useState } from 'react';
 import SectionHeading from '../../UI/SectionHeading/SectionHeading';
 import Product from '../../UI/Product/Product';
 import CartsSection from '../CartsSection/CartsSection';
 import { toast } from 'react-toastify/unstyled';
+import Loding from '../../UI/Loding/Loding';
 
-const ProductsContainer = ({ fetchProducts, AddToCartLenght, setAddToCartLenght}) => {
+const fetchProducts = fetch('/product.json').then(res => res.json());
+
+const ProductsContainer = ({ AddToCartLenght, setAddToCartLenght }) => {
     const productsData = use(fetchProducts);
     const [active, setActive] = useState(false)
     const [AddToCart, setAddToCart] = useState([]);
-    const handleAddToCart = (product)=>{
-        const exist = AddToCart.find(item=> item.id === product.id);
-        if(!exist){
+    const handleAddToCart = (product) => {
+        const exist = AddToCart.find(item => item.id === product.id);
+        if (!exist) {
             toast("Added Successfully");
             setAddToCartLenght(AddToCartLenght + 1)
             const newAddToCart = [...AddToCart, product];
@@ -38,26 +41,28 @@ const ProductsContainer = ({ fetchProducts, AddToCartLenght, setAddToCartLenght}
                 </div>
             </div>
 
-            {/* products container  */}
-            {
-                active ||
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-5">
-                    {
-                        productsData.map((product) => <Product 
-                        key={product.id}
-                        handleAddToCart={handleAddToCart} 
-                        product={product}></Product>)
-                    }
-                </div>
-            }
-            {
-                active && <CartsSection 
-                AddToCartLenght={AddToCartLenght}
-                setAddToCartLenght={setAddToCartLenght}
-                AddToCart={AddToCart}
-                setAddToCart={setAddToCart}
-                ></CartsSection>
-            }
+            <Suspense fallback={<Loding></Loding>}>
+                {/* products container  */}
+                {
+                    active ||
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-5">
+                        {
+                            productsData.map((product) => <Product
+                                key={product.id}
+                                handleAddToCart={handleAddToCart}
+                                product={product}></Product>)
+                        }
+                    </div>
+                }
+                {
+                    active && <CartsSection
+                        AddToCartLenght={AddToCartLenght}
+                        setAddToCartLenght={setAddToCartLenght}
+                        AddToCart={AddToCart}
+                        setAddToCart={setAddToCart}
+                    ></CartsSection>
+                }
+            </Suspense>
         </div>
     );
 };
