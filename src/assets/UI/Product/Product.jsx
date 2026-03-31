@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 
-const Product = ({ product }) => {
+const Product = ({ product, handleAddToCart }) => {
     // console.log(product);
     const { imgSrc, name, period, price, tag, description, features } = product;
     return (
@@ -30,7 +30,9 @@ const Product = ({ product }) => {
                     features.map((item, index) => <p key={index} className='flex items-center gap-2 text-gray-500'><FaCheck color='#30B868'></FaCheck> {item}</p>)
                 }
             </div>
-            <button className='btn my-4 w-full bg-linear-to-l from-[#4F39F6] hover:from-[#442cfd] to-[#9514FA] hover:to-[#8404e6] transition-all hover:-translate-y-0.5 hover:shadow-lg ease-out duration-300 text-white rounded-full border-none'>Buy Now</button>
+            <button 
+            onClick={()=> handleAddToCart(product)}
+            className='btn my-4 w-full bg-linear-to-l from-[#4F39F6] hover:from-[#442cfd] to-[#9514FA] hover:to-[#8404e6] transition-all hover:-translate-y-0.5 hover:shadow-lg ease-out duration-300 text-white rounded-full border-none'>Buy Now</button>
         </div>
     );
 };

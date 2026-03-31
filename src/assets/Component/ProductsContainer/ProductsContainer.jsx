@@ -1,11 +1,22 @@
 import React, { use, useState } from 'react';
 import SectionHeading from '../../UI/SectionHeading/SectionHeading';
 import Product from '../../UI/Product/Product';
-import EmptyMsg from '../../UI/EmptyMsg/EmptyMsg';
+import CartsSection from '../CartsSection/CartsSection';
+import { toast } from 'react-toastify/unstyled';
 
 const ProductsContainer = ({ fetchProducts }) => {
     const productsData = use(fetchProducts);
     const [active, setActive] = useState(false)
+    const [AddToCart, setAddToCart] = useState([]);
+    const handleAddToCart = (product)=>{
+        const exist = AddToCart.find(item=> item.id === product.id);
+        if(!exist){
+            toast("Added Successfully");
+            
+            const newAddToCart = [...AddToCart, product];
+            setAddToCart(newAddToCart);
+        }
+    }
     // console.log(productsData);
     return (
         <div className='w-[90%] md:w-[85%] mx-auto py-10'>
@@ -23,7 +34,7 @@ const ProductsContainer = ({ fetchProducts }) => {
 
                     <button
                         onClick={() => setActive(true)}
-                        className={`${active ? 'btn bg-linear-to-l from-[#4F39F6] hover:from-[#442cfd] to-[#9514FA] hover:to-[#8404e6] text-white rounded-full border-none' : 'btn bg-transparent border-none rounded-full'} `}>Cart (2)</button>
+                        className={`${active ? 'btn bg-linear-to-l from-[#4F39F6] hover:from-[#442cfd] to-[#9514FA] hover:to-[#8404e6] text-white rounded-full border-none' : 'btn bg-transparent border-none rounded-full'} `}>Cart ({AddToCart.length})</button>
                 </div>
             </div>
 
@@ -32,12 +43,18 @@ const ProductsContainer = ({ fetchProducts }) => {
                 active ||
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-5">
                     {
-                        productsData.map((product) => <Product key={product.id} product={product}></Product>)
+                        productsData.map((product) => <Product 
+                        key={product.id}
+                        handleAddToCart={handleAddToCart} 
+                        product={product}></Product>)
                     }
                 </div>
             }
             {
-                active && <EmptyMsg></EmptyMsg>
+                active && <CartsSection 
+                AddToCart={AddToCart}
+                setAddToCart={setAddToCart}
+                ></CartsSection>
             }
         </div>
     );
