@@ -1,5 +1,6 @@
 import React from 'react';
 import Cart from '../../UI/Cart/Cart';
+import { toast } from 'react-toastify';
 
 const Carts = ({ AddToCart, setAddToCart, AddToCartLenght, setAddToCartLenght }) => {
     let totalSum = 0;
@@ -11,15 +12,16 @@ const Carts = ({ AddToCart, setAddToCart, AddToCartLenght, setAddToCartLenght })
         const filterProduct = AddToCart.filter(item => item.id !== deletedProduct.id);
         setAddToCart(filterProduct)
         setAddToCartLenght(filterProduct.length);
-        
+        toast.error("❌ Item removed from cart");
     }
     const handleAllCartDlt = () => {
         setAddToCart([]);
         setAddToCartLenght(0);
+        toast.info("🚀 Placing your order...");
     }
     return (
         <div className='border border-gray-200 p-5 rounded-xl space-y-2.5'>
-            <h1 className=' text-2xl font-bold'>Your Cart</h1>
+            <h1 className='text-xl sm:text-2xl font-bold'>Your Cart</h1>
             <div className=" space-y-3 my-5">
                 {
                     AddToCart.map(product => <Cart

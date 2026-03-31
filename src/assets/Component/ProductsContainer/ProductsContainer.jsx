@@ -2,7 +2,7 @@ import React, { Suspense, use, useState } from 'react';
 import SectionHeading from '../../UI/SectionHeading/SectionHeading';
 import Product from '../../UI/Product/Product';
 import CartsSection from '../CartsSection/CartsSection';
-import { toast } from 'react-toastify/unstyled';
+import { toast } from 'react-toastify';
 import Loding from '../../UI/Loding/Loding';
 
 const fetchProducts = fetch('/product.json').then(res => res.json());
@@ -14,10 +14,11 @@ const ProductsContainer = ({ AddToCartLenght, setAddToCartLenght }) => {
     const handleAddToCart = (product) => {
         const exist = AddToCart.find(item => item.id === product.id);
         if (!exist) {
-            toast("Added Successfully");
+            // toast("Added Successfully");
             setAddToCartLenght(AddToCartLenght + 1)
             const newAddToCart = [...AddToCart, product];
             setAddToCart(newAddToCart);
+            toast.success("🎉 Order Success");
         }
     }
     // console.log(productsData);
