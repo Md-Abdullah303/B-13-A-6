@@ -1,7 +1,7 @@
 import React from 'react';
 import { LuShoppingCart } from 'react-icons/lu';
 
-const Navber = () => {
+const Navber = ({AddToCartLenght}) => {
     return (
         <nav className=' fixed w-full z-50 shadow-sm bg-[#FFFFFF]'>
             <div className="navbar  md:w-[85%] mx-auto  ">
@@ -35,7 +35,11 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3.5">
-                    <button className='hover:bg-base-300 cursor-pointer p-2 rounded-full'><LuShoppingCart /></button>
+                    <button className='hover:bg-base-300 relative cursor-pointer p-2 rounded-full'>
+                        <p className={`absolute -top-1 z-10 bg-amber-600 text-white w-4 h-4 rounded-full 
+                            ${AddToCartLenght === 0 ? 'hidden' : 'flex'} items-center justify-center text-[9px] -right-1`}>{AddToCartLenght}</p>
+                        <LuShoppingCart />
+                    </button>
                     <button className=' cursor-pointer hidden md:flex'>Login</button>
                     <button className='btn hidden sm:flex bg-linear-to-l from-[#4F39F6] hover:from-[#442cfd] to-[#9514FA] hover:to-[#8404e6] transition-all hover:-translate-y-0.5 hover:shadow-lg ease-out duration-300 text-white rounded-full border-none'>Get Started</button>
                 </div>

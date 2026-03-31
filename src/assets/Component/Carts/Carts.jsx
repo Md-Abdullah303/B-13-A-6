@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from '../../UI/Cart/Cart';
 
-const Carts = ({ AddToCart, setAddToCart }) => {
+const Carts = ({ AddToCart, setAddToCart, AddToCartLenght, setAddToCartLenght }) => {
     let totalSum = 0;
     AddToCart.map(product => {
         totalSum = totalSum + product.price;
@@ -10,6 +10,8 @@ const Carts = ({ AddToCart, setAddToCart }) => {
     const handleDlt = (deletedProduct) => {
         const filterProduct = AddToCart.filter(item => item.id !== deletedProduct.id);
         setAddToCart(filterProduct)
+        setAddToCartLenght(filterProduct.length);
+        // setAddToCartLenght(AddToCartLenght - 1);
     }
     const handleAllCartDlt = () => {
         setAddToCart([]);

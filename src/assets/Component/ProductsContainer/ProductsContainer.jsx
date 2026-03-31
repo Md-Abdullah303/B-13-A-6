@@ -4,7 +4,7 @@ import Product from '../../UI/Product/Product';
 import CartsSection from '../CartsSection/CartsSection';
 import { toast } from 'react-toastify/unstyled';
 
-const ProductsContainer = ({ fetchProducts }) => {
+const ProductsContainer = ({ fetchProducts, AddToCartLenght, setAddToCartLenght}) => {
     const productsData = use(fetchProducts);
     const [active, setActive] = useState(false)
     const [AddToCart, setAddToCart] = useState([]);
@@ -12,7 +12,7 @@ const ProductsContainer = ({ fetchProducts }) => {
         const exist = AddToCart.find(item=> item.id === product.id);
         if(!exist){
             toast("Added Successfully");
-            
+            setAddToCartLenght(AddToCartLenght + 1)
             const newAddToCart = [...AddToCart, product];
             setAddToCart(newAddToCart);
         }
@@ -52,6 +52,8 @@ const ProductsContainer = ({ fetchProducts }) => {
             }
             {
                 active && <CartsSection 
+                AddToCartLenght={AddToCartLenght}
+                setAddToCartLenght={setAddToCartLenght}
                 AddToCart={AddToCart}
                 setAddToCart={setAddToCart}
                 ></CartsSection>
